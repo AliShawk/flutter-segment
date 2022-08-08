@@ -6,6 +6,7 @@
 #import <Segment_Amplitude/SEGAmplitudeIntegrationFactory.h>
 #import <Segment_Adjust/SEGAdjustIntegrationFactory.h>
 #import <Segment_Mixpanel/SEGMixpanelIntegrationFactory.h>
+@import AdSupport;
 
 @implementation FlutterSegmentPlugin
 // Contents to be appended to the context
@@ -359,6 +360,12 @@ static BOOL wasSetupFromFile = NO;
         return nil;
     }
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:writeKey];
+    configuration.enableAdvertisingTracking = YES;
+    // Set the block to be called when the advertisingID is needed
+    // NOTE: In iOS 14, you'll need to manually do authorization elsewhere and only when it has been authorized, return the advertisingIdentifier to segment via the block below
+        configuration.adSupportBlock = ^{
+            return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+        };
     configuration.trackApplicationLifecycleEvents = trackApplicationLifecycleEvents;
 
     if (isAmplitudeIntegrationEnabled) {
@@ -384,6 +391,12 @@ static BOOL wasSetupFromFile = NO;
     BOOL isAdjustIntegrationEnabled = [[dict objectForKey: @"adjustIntegrationEnabled"] boolValue];
     BOOL isMixpanelIntegrationEnabled = [[dict objectForKey: @"mixpanelIntegrationEnabled"] boolValue];
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:writeKey];
+    configuration.enableAdvertisingTracking = YES;
+    // Set the block to be called when the advertisingID is needed
+    // NOTE: In iOS 14, you'll need to manually do authorization elsewhere and only when it has been authorized, return the advertisingIdentifier to segment via the block below
+    configuration.adSupportBlock = ^{
+        return [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    };
     configuration.trackApplicationLifecycleEvents = trackApplicationLifecycleEvents;
 
     if (isAmplitudeIntegrationEnabled) {
