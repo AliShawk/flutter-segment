@@ -13,6 +13,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://appboy.github.io/appboy-android-sdk/sdk" }
+        maven { url "https://appboy.github.io/appboy-segment-android/sdk" }
     }
 }
 

@@ -4,6 +4,23 @@ PODS:
   - Adjust/Core (4.29.7)
   - Amplitude (8.5.0)
   - Analytics (4.1.6)
+  - Appboy-iOS-SDK (4.4.4):
+    - Appboy-iOS-SDK/UI (= 4.4.4)
+  - Appboy-iOS-SDK/ContentCards (4.4.4):
+    - Appboy-iOS-SDK/Core
+    - SDWebImage (< 6, >= 5.8.2)
+  - Appboy-iOS-SDK/Core (4.4.4)
+  - Appboy-iOS-SDK/InAppMessage (4.4.4):
+    - Appboy-iOS-SDK/Core
+    - SDWebImage (< 6, >= 5.8.2)
+  - Appboy-iOS-SDK/NewsFeed (4.4.4):
+    - Appboy-iOS-SDK/Core
+    - SDWebImage (< 6, >= 5.8.2)
+  - Appboy-iOS-SDK/UI (4.4.4):
+    - Appboy-iOS-SDK/ContentCards
+    - Appboy-iOS-SDK/Core
+    - Appboy-iOS-SDK/InAppMessage
+    - Appboy-iOS-SDK/NewsFeed
   - AppsFlyerFramework (6.5.4):
     - AppsFlyerFramework/Main (= 6.5.4)
   - AppsFlyerFramework/Main (6.5.4)
@@ -13,15 +30,25 @@ PODS:
     - Flutter
     - Segment-Adjust (= 3.1.2)
     - Segment-Amplitude (= 3.3.2)
+    - Segment-Appboy (= 4.5.0)
     - segment-appsflyer-ios (= 6.5.2)
     - Segment-Mixpanel (= 1.7.2)
   - Mixpanel (3.9.1)
+  - SDWebImage (5.13.2):
+    - SDWebImage/Core (= 5.13.2)
+  - SDWebImage/Core (5.13.2)
   - Segment-Adjust (3.1.2):
     - Adjust (~> 4.29.3)
     - Analytics
   - Segment-Amplitude (3.3.2):
     - Amplitude (~> 8.3)
     - Analytics
+  - Segment-Appboy (4.5.0):
+    - Analytics
+    - Segment-Appboy/Full-SDK (= 4.5.0)
+  - Segment-Appboy/Full-SDK (4.5.0):
+    - Analytics
+    - Appboy-iOS-SDK (~> 4.4.1)
   - segment-appsflyer-ios (6.5.2):
     - Analytics
     - segment-appsflyer-ios/Main (= 6.5.2)
@@ -41,10 +68,13 @@ SPEC REPOS:
     - Adjust
     - Amplitude
     - Analytics
+    - Appboy-iOS-SDK
     - AppsFlyerFramework
     - Mixpanel
+    - SDWebImage
     - Segment-Adjust
     - Segment-Amplitude
+    - Segment-Appboy
     - segment-appsflyer-ios
     - Segment-Mixpanel
 
@@ -58,12 +88,15 @@ SPEC CHECKSUMS:
   Adjust: 91a06a01e4bb35b432e26b5d5bb8995b95fc381c
   Amplitude: ef9ed339ddd33c9183edf63fa4bbaa86cf873321
   Analytics: eefe524436f904b8bb3f8c8c3425280e43b34efc
+  Appboy-iOS-SDK: b05b957ab645d0a9a43d3f35195ad69202b89edc
   AppsFlyerFramework: e309a6cab366296bf891dc68b175de1e9a44f86c
   Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
-  flutter_segment: c5593292cff1e23ad58cf51a4a70b7776d47a9dc
+  flutter_segment: 1b14157fe5dbc0132b61375bb8bb44d54d823b8f
   Mixpanel: c56ad53567add8e710b10172baf3b8d8b1da9228
+  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
   Segment-Adjust: 7646c502b087a153d89a42059dd53e6d1d143737
   Segment-Amplitude: 6c1e59c8c278a21029ba7a6a788fcb31b9233a2c
+  Segment-Appboy: 3ccf7ffd34701e11029e1d013e57eae0756a8eb1
   segment-appsflyer-ios: 78c65acfd78dd17ed347623f01919c44b0226174
   Segment-Mixpanel: c08a6e23e4eeb2140a2bb87f5b1c859103b3ecc5
 

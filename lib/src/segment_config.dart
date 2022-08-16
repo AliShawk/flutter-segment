@@ -6,6 +6,7 @@ class SegmentConfig {
     this.appsflyerIntegrationEnabled = false,
     this.mixPanelIntegrationEnabled = false,
     this.adjustIntegrationEnabled = false,
+    this.appBoyIntegrationEnabled = false,
     this.debug = false,
   });
 
@@ -15,6 +16,7 @@ class SegmentConfig {
   final bool appsflyerIntegrationEnabled;
   final bool mixPanelIntegrationEnabled;
   final bool adjustIntegrationEnabled;
+  final bool appBoyIntegrationEnabled;
   final bool debug;
 
   Map<String, dynamic> toMap() {
@@ -25,6 +27,7 @@ class SegmentConfig {
       'appsflyerIntegrationEnabled': appsflyerIntegrationEnabled,
       'adjustIntegrationEnabled': adjustIntegrationEnabled,
       'mixPanelIntegrationEnabled': mixPanelIntegrationEnabled,
+      'appBoyIntegrationEnabled' : appBoyIntegrationEnabled,
       'debug': debug,
     };
   }

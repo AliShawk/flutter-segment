@@ -39,6 +39,7 @@ android {
         implementation 'com.appsflyer:segment-android-integration:6.5.2'
         implementation 'com.segment.analytics.android.integrations:adjust:0.3.5'
         implementation 'com.segment.analytics.android.integrations:mixpanel:3.2.2'
+        implementation 'com.appboy:appboy-segment-integration:13.0.0'
     }
 }
 
