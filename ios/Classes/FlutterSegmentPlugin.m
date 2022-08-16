@@ -6,7 +6,6 @@
 #import <Segment_Amplitude/SEGAmplitudeIntegrationFactory.h>
 #import <Segment_Adjust/SEGAdjustIntegrationFactory.h>
 #import <Segment_Mixpanel/SEGMixpanelIntegrationFactory.h>
-#import <Segment_Appboy/SEGAppboyIntegrationFactory.h>
 
 @implementation FlutterSegmentPlugin
 // Contents to be appended to the context
@@ -355,7 +354,6 @@ static BOOL wasSetupFromFile = NO;
     BOOL isAmplitudeIntegrationEnabled = [[dict objectForKey: @"com.claimsforce.segment.ENABLE_AMPLITUDE_INTEGRATION"] boolValue];
     BOOL isAdjustIntegrationEnabled = [[dict objectForKey: @"com.claimsforce.segment.ENABLE_ADJUST_INTEGRATION"] boolValue];
     BOOL isMixpanelIntegrationEnabled = [[dict objectForKey: @"com.claimsforce.segment.ENABLE_MIXPANEL_INTEGRATION"] boolValue];
-    BOOL isAppBoyIntegrationEnabled = [[dict objectForKey:@"com.claimsforce.segment.ENABLE_APPBOY_INTEGRATION"] boolValue];
 
     if(!writeKey) {
         return nil;
@@ -374,10 +372,6 @@ static BOOL wasSetupFromFile = NO;
     if (isAdjustIntegrationEnabled) {
           [configuration use:[SEGAdjustIntegrationFactory instance]];
     }
-    
-    if (isAppBoyIntegrationEnabled) {
-        [configuration use:[SEGAppboyIntegrationFactory instance]];
-    }
 
     return configuration;
 }
@@ -389,7 +383,6 @@ static BOOL wasSetupFromFile = NO;
     BOOL isAppsflyerIntegrationEnabled = [[dict objectForKey: @"appsflyerIntegrationEnabled"] boolValue];
     BOOL isAdjustIntegrationEnabled = [[dict objectForKey: @"adjustIntegrationEnabled"] boolValue];
     BOOL isMixpanelIntegrationEnabled = [[dict objectForKey: @"mixpanelIntegrationEnabled"] boolValue];
-    BOOL isAppBoyIntegrationEnabled = [[dict objectForKey: @"appBoyIntegrationEnabled"] boolValue];
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:writeKey];
     configuration.trackApplicationLifecycleEvents = trackApplicationLifecycleEvents;
 
@@ -408,10 +401,6 @@ static BOOL wasSetupFromFile = NO;
      if (isAdjustIntegrationEnabled) {
        [configuration use:[SEGAdjustIntegrationFactory instance]];
      }
-    
-    if (isAppBoyIntegrationEnabled) {
-        [configuration use:[SEGAppboyIntegrationFactory instance]];
-    }
 
     return configuration;
 }

@@ -12,9 +12,6 @@ void main() {
     options: SegmentConfig(
       writeKey: 'YOUR_WRITE_KEY_GOES_HERE',
       trackApplicationLifecycleEvents: false,
-      adjustIntegrationEnabled: true,
-      mixPanelIntegrationEnabled: true,
-      appBoyIntegrationEnabled: true
     ),
   );
 

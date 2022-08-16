@@ -11,7 +11,6 @@ public class FlutterSegmentOptions {
     private final Boolean appsflyerIntegrationEnabled;
     private final Boolean mixPanelIntegrationEnabled;
     private final Boolean adjustIntegrationEnabled;
-    private final Boolean appBoyIntegrationEnabled;
     private final Boolean debug;
 
     public  FlutterSegmentOptions(
@@ -21,7 +20,6 @@ public class FlutterSegmentOptions {
             Boolean appsflyerIntegrationEnabled,
             Boolean mixPanelIntegrationEnabled,
             Boolean adjustIntegrationEnabled,
-            Boolean appBoyIntegrationEnabled,
             Boolean debug
     ) {
         this.writeKey = writeKey;
@@ -30,7 +28,6 @@ public class FlutterSegmentOptions {
         this.appsflyerIntegrationEnabled = appsflyerIntegrationEnabled;
         this.adjustIntegrationEnabled = adjustIntegrationEnabled;
         this.mixPanelIntegrationEnabled = mixPanelIntegrationEnabled;
-        this.appBoyIntegrationEnabled = appBoyIntegrationEnabled;
         this.debug = debug;
     }
 
@@ -54,10 +51,6 @@ public class FlutterSegmentOptions {
         return adjustIntegrationEnabled;
     }
 
-    public Boolean isAppBoyIntegrationEnabled() {
-        return appBoyIntegrationEnabled;
-    }
-
     public Boolean isMixPanelIntegrationEnabled() {
         return mixPanelIntegrationEnabled;
     }
@@ -73,9 +66,8 @@ public class FlutterSegmentOptions {
         Boolean isAppsflyerIntegrationEnabled = bundle.getBoolean("com.claimsforce.segment.ENABLE_APPSFLYER_INTEGRATION", false);
         Boolean isAdjustIntegrationEnabled = bundle.getBoolean("com.claimsforce.segment.ENABLE_ADJUST_INTEGRATION",false);
         Boolean isMixPanelIntegrationEnabled = bundle.getBoolean("com.claimsforce.segment.ENABLE_MIXPANEL_INTEGRATION",false);
-        Boolean isAppBoyIntegrationEnabled = bundle.getBoolean("com.claimsforce.segment.ENABLE_APPBOY_INTEGRATION",false);
         Boolean debug = bundle.getBoolean("com.claimsforce.segment.DEBUG", false);
-        return new FlutterSegmentOptions(writeKey, trackApplicationLifecycleEvents, isAmplitudeIntegrationEnabled, isAppsflyerIntegrationEnabled, isMixPanelIntegrationEnabled, isAdjustIntegrationEnabled, isAppBoyIntegrationEnabled, debug);
+        return new FlutterSegmentOptions(writeKey, trackApplicationLifecycleEvents, isAmplitudeIntegrationEnabled, isAppsflyerIntegrationEnabled, isMixPanelIntegrationEnabled, isAdjustIntegrationEnabled, debug);
     }
 
     static FlutterSegmentOptions create(HashMap<String, Object> options) {
@@ -85,9 +77,8 @@ public class FlutterSegmentOptions {
         Boolean isAppsflyerIntegrationEnabled = orFalse((Boolean) options.get("appsflyerIntegrationEnabled"));
         Boolean isAdjustIntegrationEnabled = orFalse((Boolean) options.get("adjustIntegrationEnabled"));
         Boolean isMixPanelIntegrationEnabled = orFalse((Boolean) options.get("mixPanelIntegrationEnabled"));
-        Boolean isAppBoyIntegrationEnabled = orFalse((Boolean) options.get("appBoyIntegrationEnabled"));
         Boolean debug = orFalse((Boolean) options.get("debug"));
-        return new FlutterSegmentOptions(writeKey, trackApplicationLifecycleEvents, isAmplitudeIntegrationEnabled, isAppsflyerIntegrationEnabled, isMixPanelIntegrationEnabled, isAdjustIntegrationEnabled, isAppBoyIntegrationEnabled, debug);
+        return new FlutterSegmentOptions(writeKey, trackApplicationLifecycleEvents, isAmplitudeIntegrationEnabled, isAppsflyerIntegrationEnabled, isMixPanelIntegrationEnabled, isAdjustIntegrationEnabled, debug);
     }
 
     private static Boolean orFalse(Boolean value) {

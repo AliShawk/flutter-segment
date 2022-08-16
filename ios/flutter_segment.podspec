@@ -20,7 +20,6 @@ A new flutter plugin project.
   s.dependency 'segment-appsflyer-ios', '6.5.2'
   s.dependency 'Segment-Mixpanel', '1.7.2'
   s.dependency 'Segment-Adjust', '3.1.2'
-  s.dependency 'Segment-Appboy', '4.5.0'
   s.ios.deployment_target = '11.0'
 
   # Added because Segment-Amplitude dependencies on iOS cause this error:
